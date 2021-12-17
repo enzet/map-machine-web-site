@@ -1,0 +1,37 @@
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <style>
+            body {background-color: #111; color: #EEF;}
+            div.logo {font-family: "Montserrat"; font-weight: 700; font-size: 50pt;}
+            div.tag {font-family: "JetBrains Mono"; font-size: 20pt;}
+            svg.canvas {border: 0px solid #DDD;}
+        </style>
+    </head>
+    <body>
+        <div id="logo" class="logo">Röntgen</div>
+
+        <div class="tag">man_made: surveillance</div>
+        <div class="tag" id="direction_text">direction: 0</div>
+        <svg id="direction_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <radialGradient id="blue_gradient" cx="150px" cy="140px" r="120px" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#08f" stop-opacity="0.0" />
+                    <stop offset="30%" stop-color="#08f" stop-opacity="0.0" />
+                    <stop offset="30%" stop-color="#08f" stop-opacity="0.0" />
+                    <stop offset="90%" stop-color="#08f" stop-opacity="0.6" />
+                    <stop offset="90%" stop-color="#08f" stop-opacity="0.0" />
+                    <stop offset="100%" stop-color="#08f" stop-opacity="0.0" />
+                </radialGradient>
+            </defs>
+            <path id="direction_sector" d="" stroke="none" fill="url('#blue_gradient')" />
+            <path
+                    fill="#EEF"
+                    id="direction_icon"
+                    d="M 580 19 C 578.892 19 578 19.892 578 21 L 578 22 C 578 23.108 578.892 24 580 24 L 581.27344 24 A 2 2 0 0 0 582 24.716797 L 582 25.382812 L 579 26.882812 L 579 26 L 578 26 L 578 30 L 579 30 L 579 28.994141 A 1 1 0 0 0 579.44727 28.894531 L 583.44727 26.894531 A 1.0001 1.0001 0 0 0 584 26 L 584 24.716797 A 2 2 0 0 0 584.72656 24 L 585 24 L 587 24 L 587 22 L 587 21 L 587 20.5 L 588.5 19 L 585 19 L 584 19 L 580 19 z M 588.91406 20 L 588 20.914062 L 588 23 L 589.5 23 C 589.777 23 590 22.777 590 22.5 L 590 20.5 C 590 20.223 589.777 20 589.5 20 L 588.91406 20 z "
+                    transform="translate(-584.0,-24.0)"
+            />
+        </svg>
+    </body>
+    <script type="text/javascript" src="code.js"></script>
+</html>
