@@ -1,12 +1,23 @@
 function descartes(degree, center, radius) {
-    return {
-        x: center.x + Math.cos(degree / 180 * Math.PI) * radius,
-        y: center.y + Math.sin(degree / 180 * Math.PI) * radius
-    };
+    return [
+        center[0] + Math.cos(degree / 180 * Math.PI) * radius,
+        center[1] + Math.sin(degree / 180 * Math.PI) * radius,
+    ];
 }
 
 function toCoordinates(vector) {
-    return vector.x + "," + vector.y;
+    return vector[0] + "," + vector[1];
+}
+
+function line(point1, point2) {
+    return "M " + toCoordinates(point1) + " L " + toCoordinates(point2);
+}
+
+function plus(point1, point2) {
+    return [
+        point1[0] + point2[0],
+        point1[1] + point2[1],
+    ]
 }
 
 function smooth(value) {

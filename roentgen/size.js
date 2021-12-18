@@ -3,6 +3,7 @@ window.setInterval(sizeRun, 1);
 sizeIterator = 0
 sizeModeIndex = 0
 minIconSize = 14
+maxIconSize = 128
 sizeCenter = [150.0, 150.0]
 
 sizeIcon = document.getElementById("size_icon");
@@ -12,17 +13,6 @@ for (i in [...Array(4).keys()]) {
     sizeLines[i] = document.getElementById("size_line_" + (parseInt(i) + 1));
 }
 sizeText = document.getElementById("size_text")
-
-function line(point1, point2) {
-    return "M " + point1[0] + "," + point1[1] + " L " + point2[0] + "," + point2[1];
-}
-
-function plus(point1, point2) {
-    return [
-        point1[0] + point2[0],
-        point1[1] + point2[1],
-    ]
-}
 
 function sizeRun() {
 
@@ -37,10 +27,12 @@ function sizeRun() {
         scale = smooth(smooth(scale));
         scale = (scale + 1) / 2
 
+        maxScale = maxIconSize / minIconSize
+
         if (mode.direction == 1) {
-            scale = 1 + scale * 8.49
+            scale = 1 + (scale * (maxScale - 1))
         } else {
-            scale = 9.5 - scale * 8.49
+            scale = maxScale - scale * (maxScale - 1)
         }
 
         sizeIcon.setAttribute(

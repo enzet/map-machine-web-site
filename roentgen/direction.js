@@ -14,7 +14,7 @@ function directionRun() {
     minSectorSize = 10;
     maxSectorSize = 25;
     radius = 120;
-    center = {x: 150, y: 140};
+    directionCenter = [150, 140];
 
     directionIterator = (directionIterator < 360) ? directionIterator + 0.8 : 0
 
@@ -38,13 +38,13 @@ function directionRun() {
     degree = d - 90;
 
     scale = directionIterator > 180 ? "-4,4" : "4";
-    point1 = descartes(degree - size, center, radius);
-    point2 = descartes(degree + size, center, radius);
+    point1 = descartes(degree - size, directionCenter, radius);
+    point2 = descartes(degree + size, directionCenter, radius);
 
     directionSector.setAttribute(
         "d",
-        "M " + toCoordinates(point1) + " L " + toCoordinates(center) + " L "
-        + toCoordinates(point2)
+        "M " + toCoordinates(point1) + " L " + toCoordinates(directionCenter)
+        + " L " + toCoordinates(point2)
     )
     directionIcon.setAttribute(
         "transform",
