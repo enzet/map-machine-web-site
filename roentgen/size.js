@@ -7,6 +7,7 @@ maxIconSize = 128
 sizeCenter = [150.0, 150.0]
 
 sizeIcon = document.getElementById("size_icon");
+sizeIcon.setAttribute("d", cctv)
 sizeCanvas = document.getElementById("size_canvas");
 sizeLines = new Array(4);
 

@@ -5,6 +5,8 @@ gridCenter = [150, 150]
 gridScale = 12
 
 gridCanvas = document.getElementById("grid_canvas");
+gridIcon = document.getElementById("grid_icon");
+gridIcon.setAttribute("d", cctv)
 gridLines = new Array(30);
 
 for (i in [...Array(30).keys()]) {

@@ -2,6 +2,7 @@ window.setInterval(directionRun, 1);
 
 directionSector = document.getElementById("direction_sector");
 directionIcon = document.getElementById("direction_icon");
+directionIcon.setAttribute("d", cctv)
 directionText = document.getElementById("direction_text");
 
 // Initialization.
