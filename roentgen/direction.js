@@ -1,4 +1,4 @@
-window.setInterval(runDirection, 1);
+window.setInterval(directionRun, 1);
 
 directionSector = document.getElementById("direction_sector");
 directionIcon = document.getElementById("direction_icon");
@@ -9,22 +9,7 @@ directionText = document.getElementById("direction_text");
 modeIndex = 0;
 directionIterator = 0;
 
-function descartes(degree, center, radius) {
-    return {
-        x: center.x + Math.cos(degree / 180 * Math.PI) * radius,
-        y: center.y + Math.sin(degree / 180 * Math.PI) * radius
-    };
-}
-
-function toCoordinates(vector) {
-    return vector.x + "," + vector.y;
-}
-
-function smooth(value) {
-    return Math.sin(value * Math.PI / 2);
-}
-
-function runDirection() {
+function directionRun() {
 
     minSectorSize = 10;
     maxSectorSize = 25;
