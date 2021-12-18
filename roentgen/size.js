@@ -2,13 +2,27 @@ window.setInterval(sizeRun, 1);
 
 sizeIterator = 0
 sizeModeIndex = 0
+minIconSize = 14
+sizeCenter = [150.0, 150.0]
 
 sizeIcon = document.getElementById("size_icon");
-sizeLine1 = document.getElementById("size_line_1")
-sizeLine2 = document.getElementById("size_line_2")
-sizeLine3 = document.getElementById("size_line_3")
-sizeLine4 = document.getElementById("size_line_4")
+sizeLines = new Array(4);
+for (i in [...Array(4).keys()]) {
+    console.log("size_line_" + (i + 1));
+    sizeLines[i] = document.getElementById("size_line_" + (parseInt(i) + 1));
+}
 sizeText = document.getElementById("size_text")
+
+function line(point1, point2) {
+    return "M " + point1[0] + "," + point1[1] + " L " + point2[0] + "," + point2[1];
+}
+
+function plus(point1, point2) {
+    return [
+        point1[0] + point2[0],
+        point1[1] + point2[1],
+    ]
+}
 
 function sizeRun() {
 
@@ -33,22 +47,19 @@ function sizeRun() {
             "transform",
             "translate(150,150) scale(" + scale + ") translate(-584,-24)"
         )
-        s = scale * 7
+        s = scale * minIconSize / 2
 
-        sizeLine1.setAttribute("d", "M " + (150 - s - 20) + "," + (150 - s) + " L " + (150 + s + 20) + "," + (150 - s))
-        sizeLine2.setAttribute("d", "M " + (150 - s - 20) + "," + (150 + s) + " L " + (150 + s + 20) + "," + (150 + s))
-        sizeLine3.setAttribute("d", "M " + (150 - s) + "," + (150 - s - 20) + " L " + (150 - s) + "," + (150 + s + 20))
-        sizeLine4.setAttribute("d", "M " + (150 + s) + "," + (150 - s - 20) + " L " + (150 + s) + "," + (150 + s + 20))
+        p = [
+            [[-s - 20, -s], [s + 20, -s]],
+            [[-s - 20, s], [s + 20, s]],
+            [[-s, -s - 20], [-s, s + 20]],
+            [[s, -s - 20], [s, s + 20]],
+        ]
+        for (i in [...Array(4).keys()]) {
+            sizeLines[i].setAttribute("d",
+                line(plus(sizeCenter, p[i][0]), plus(sizeCenter, p[i][1])))
+        }
         sizeText.setAttribute("x", 150 + s + 70)
         sizeText.innerHTML = Math.floor(s * 2) + " px"
     }
-
-//    scale = directionIterator / 180 - 1 // [-1, 1]
-//    scale = Math.PI * (scale + 0.5); // [-0.5pi, 1.5pi]
-//    scale = Math.sin(scale) // [-1, 1]
-//    scale = Math.PI * scale / 2; // [-0.5pi, 1.5pi]
-//    scale = Math.sin(scale) // [-1, 1]
-//
-//    scale = 1 + (scale + 1) * 4.25
-
 }

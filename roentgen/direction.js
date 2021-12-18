@@ -22,7 +22,7 @@ function directionRun() {
     if (directionIterator >= 90 && directionIterator <= 270) {
         d = (directionIterator - 180) / 90;
     } else {
-        d = (d >= 270) ? directionIterator / 90 : (directionIterator - 360) / 90
+        d = (directionIterator >= 270) ? directionIterator / 90 : (directionIterator - 360) / 90
     }
     d = smooth(smooth(d));
     speed = Math.abs(d);
