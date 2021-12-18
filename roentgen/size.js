@@ -8,8 +8,8 @@ sizeCenter = [150.0, 150.0]
 
 sizeIcon = document.getElementById("size_icon");
 sizeLines = new Array(4);
+
 for (i in [...Array(4).keys()]) {
-    console.log("size_line_" + (i + 1));
     sizeLines[i] = document.getElementById("size_line_" + (parseInt(i) + 1));
 }
 sizeText = document.getElementById("size_text")
