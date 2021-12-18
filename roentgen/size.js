@@ -7,10 +7,16 @@ maxIconSize = 128
 sizeCenter = [150.0, 150.0]
 
 sizeIcon = document.getElementById("size_icon");
+sizeCanvas = document.getElementById("size_canvas");
 sizeLines = new Array(4);
 
 for (i in [...Array(4).keys()]) {
-    sizeLines[i] = document.getElementById("size_line_" + (parseInt(i) + 1));
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.style.stroke = "#444";
+    path.style.strokeWidth = "0.3px";
+    sizeCanvas.appendChild(path);
+
+    sizeLines[i] = path;
 }
 sizeText = document.getElementById("size_text")
 
