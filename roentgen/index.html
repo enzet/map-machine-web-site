@@ -1,13 +1,24 @@
 <html>
     <meta charset="UTF-8">
-    <head><link rel="stylesheet" href="style.css"></head>
+    <head>
+        <title>Röntgen. Free map icons</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
     <body>
+        <script type="text/javascript" src="metrika.js"></script>
+        <div id="counter"></div>
+        <script type="text/javascript" src="counter.js"></script>
         <h1 id="logo" class="logo">Röntgen</h1>
-
+        <div>
+            Free 14 × 14 px monochrome pixel-aligned CC-BY 4.0 map icons created
+            for <a href="https://github.com/enzet/map-machine">Map Machine</a>
+            project.
+        </div>
         <section>
             <div class="example">
-                <svg id="size_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg id="size_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg">
                     <path
+                        d=""
                         fill="#EEF"
                         id="size_icon"
                         transform="translate(150,150) scale(4) translate(-584,-24)"
@@ -31,18 +42,25 @@
                 All icons are pixel-aligned for 14 × 14 px size.
             </div>
             <div class="example">
-                <svg id="grid_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg
+                        id="grid_canvas" class="canvas" baseProfile="full"
+                        height="300" version="1.1" width="300"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
                     <path
-                        fill="#EEF"
-                        id="grid_icon"
-                        transform="translate(150,150) scale(12) translate(-584,-24)"
+                            d=""
+                            fill="#EEF"
+                            id="grid_icon"
+                            transform="translate(150,150) scale(12) translate(-584,-24)"
                     />
                 </svg>
             </div>
         </section>
         <section>
             <div class="example">
-                <svg id="direction_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg
+                        id="direction_canvas" class="canvas" baseProfile="full"
+                        height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <radialGradient id="blue_gradient" cx="150px" cy="140px" r="120px" gradientUnits="userSpaceOnUse">
                             <stop offset="0%" stop-color="#08f" stop-opacity="0.0" />
@@ -54,9 +72,10 @@
                     </defs>
                     <path id="direction_sector" d="" stroke="none" fill="url('#blue_gradient')" />
                     <path
-                            fill="#EEF"
-                            id="direction_icon"
-                            transform="translate(-584.0,-24.0)"
+                        d=""
+                        fill="#EEF"
+                        id="direction_icon"
+                        transform="translate(-584.0,-24.0)"
                     />
                 </svg>
             </div>
