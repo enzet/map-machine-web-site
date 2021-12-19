@@ -13,10 +13,17 @@ benchModes = [
 ];
 
 sizeModes = [
-    {action: "change", direction: 1, steps: 200},
-    {action: "pause", steps: 200},
-    {action: "change",  direction: -1, steps: 200},
-    {action: "pause", steps: 200},
+    {action: "fade_in", steps: 50},
+    {action: "pause", steps: 50},
+    {action: "grid_fade_in", steps: 50},
+    {action: "change", direction: 1, steps: 100},
+    {action: "grid_fade_out", steps: 50},
+    {action: "pause", steps: 100},
+    {action: "grid_fade_in", steps: 50},
+    {action: "change",  direction: -1, steps: 100},
+    {action: "grid_fade_out", steps: 50},
+    {action: "pause", steps: 50},
+    {action: "fade_out", steps: 50},
 ]
 
 gridModes = [
