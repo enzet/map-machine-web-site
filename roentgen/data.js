@@ -21,6 +21,12 @@ sizeModes = [
     {action: "pause", steps: 200},
 ]
 
+gridModes = [
+    {action: "in", steps: 100},
+    {action: "pause", steps: 100},
+    {action: "out", steps: 100},
+]
+
 speedModes = [
     {action: "pause", steps: 5},
     {action: "write", from: "", to: "maxspeed: 42"},
