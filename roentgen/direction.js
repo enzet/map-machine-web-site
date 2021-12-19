@@ -1,4 +1,4 @@
-window.setInterval(directionRun, 1);
+window.setInterval(directionRun, 25);
 
 directionSector = document.getElementById("direction_sector");
 directionIcon = document.getElementById("direction_icon");
@@ -17,7 +17,7 @@ function directionRun() {
     radius = 120;
     directionCenter = [150, 140];
 
-    directionIterator = (directionIterator < 360) ? directionIterator + 0.8 : 0
+    directionIterator = (directionIterator < 360) ? directionIterator + 4 : 0
 
     // Convert to [-1, 1].
     if (directionIterator >= 90 && directionIterator <= 270) {
