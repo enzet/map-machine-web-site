@@ -4,13 +4,25 @@ gridIterator = 0
 gridModeIndex = 0
 gridCenter = [150, 150]
 gridScale = 12
+icon = icons.cctv
 
 gridCanvas = document.getElementById("grid_canvas");
 gridIcon = document.getElementById("grid_icon");
-gridIcon.setAttribute("d", cctv)
+gridIcon.setAttribute("d", icon.d)
 gridIconStroke = document.getElementById("grid_icon_stroke");
-gridIconStroke.setAttribute("d", cctv)
+gridIconStroke.setAttribute("d", icons.cctv.d)
 gridLines = new Array(30);
+
+gridIcon.setAttribute(
+    "transform",
+    "translate(150,150) scale(" + gridScale + ") "
+    + "translate(" + icon.x + "," + icon.y + ")"
+)
+gridIconStroke.setAttribute(
+    "transform",
+    "translate(150,150) scale(" + gridScale + ") "
+    + "translate(" + icon.x + "," + icon.y + ")"
+)
 
 for (i in [...Array(30).keys()]) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");  

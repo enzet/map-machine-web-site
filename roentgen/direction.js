@@ -1,8 +1,10 @@
 window.setInterval(directionRun, 25);
 
+icon = icons.cctv
+
 directionSector = document.getElementById("direction_sector");
 directionIcon = document.getElementById("direction_icon");
-directionIcon.setAttribute("d", cctv)
+directionIcon.setAttribute("d", icon.d)
 directionText = document.getElementById("direction_text");
 
 // Initialization.
@@ -49,6 +51,7 @@ function directionRun() {
     )
     directionIcon.setAttribute(
         "transform",
-        "translate(150,150) scale(" + scale + ") translate(-584,-24)"
+        "translate(150,150) scale(" + scale + ") "
+        + "translate(" + icon.x + "," + icon.y + ")"
     )
 }

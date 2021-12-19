@@ -5,9 +5,10 @@ sizeModeIndex = 0
 minIconSize = 14
 maxIconSize = 128
 sizeCenter = [150.0, 150.0]
+icon = icons.cctv
 
 sizeIcon = document.getElementById("size_icon");
-sizeIcon.setAttribute("d", cctv)
+sizeIcon.setAttribute("d", icon.d)
 sizeCanvas = document.getElementById("size_canvas");
 sizeLines = new Array(4);
 
@@ -44,7 +45,8 @@ function sizeRun() {
 
         sizeIcon.setAttribute(
             "transform",
-            "translate(150,150) scale(" + scale + ") translate(-584,-24)"
+            "translate(150,150) scale(" + scale + ") "
+            + "translate(" + icon.x + "," + icon.y + ")"
         )
         s = scale * minIconSize / 2
 
