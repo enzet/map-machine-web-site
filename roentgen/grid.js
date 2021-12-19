@@ -5,10 +5,10 @@ gridModeIndex = 0
 gridCenter = [150, 150]
 gridScale = 12
 gridIcons = [
-    icons.telephone,
-    icons.crane,
-    icons.fountain_toret,
     icons.city_gate,
+    icons.fountain_toret,
+    icons.crane,
+    icons.telephone,
     icons.two_people_together,
 ]
 gridIconIndex = 0

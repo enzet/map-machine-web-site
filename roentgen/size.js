@@ -9,7 +9,7 @@ sizeIcons = [
     icons.diving_platform,
     icons.wind_turbine,
     icons.binoculars,
-    icons.telephone,
+    icons.telescope_radio,
     icons.mausoleum, // toy_horse
 ]
 sizeIconIndex = 0
