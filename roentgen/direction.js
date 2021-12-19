@@ -35,7 +35,7 @@ function directionRun() {
         d = (d >= 0) ? d * 90 : d * 90 + 360;
     }
     size = maxSectorSize - speed * (maxSectorSize - minSectorSize);
-    directionText.innerHTML = "direction: " + Math.floor(d);
+    directionText.innerHTML = "direction: " + Math.round(d);
     degree = d - 90;
 
     scale = directionIterator > 180 ? "-4,4" : "4";
