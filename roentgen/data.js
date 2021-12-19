@@ -22,9 +22,13 @@ sizeModes = [
 ]
 
 gridModes = [
-    {action: "in", steps: 100},
-    {action: "pause", steps: 100},
-    {action: "out", steps: 100},
+    {action: "in", steps: 40},
+    {action: "stroke", steps: 100},
+    {action: "pause", steps: 20},
+    {action: "fill", steps: 100},
+    {action: "out", steps: 40},
+    {action: "pause", steps: 50},
+    {action: "unfill", steps: 50},
 ]
 
 speedModes = [

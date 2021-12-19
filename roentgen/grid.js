@@ -1,4 +1,4 @@
-window.setInterval(gridRun, 10);
+window.setInterval(gridRun, 25);
 
 gridIterator = 0
 gridModeIndex = 0
@@ -8,6 +8,8 @@ gridScale = 12
 gridCanvas = document.getElementById("grid_canvas");
 gridIcon = document.getElementById("grid_icon");
 gridIcon.setAttribute("d", cctv)
+gridIconStroke = document.getElementById("grid_icon_stroke");
+gridIconStroke.setAttribute("d", cctv)
 gridLines = new Array(30);
 
 for (i in [...Array(30).keys()]) {
@@ -22,7 +24,7 @@ for (i in [...Array(30).keys()]) {
 function gridRun() {
 
     [gridIterator, gridModeIndex] =
-        increment(gridIterator, gridModeIndex, gridModes, 1);
+        increment(gridIterator, gridModeIndex, gridModes, 2);
 
     mode = gridModes[gridModeIndex]
 
@@ -34,13 +36,11 @@ function gridRun() {
             localIterator = gridIterator // + (i - 15) * 2 // Try also (i - 35).
         }
 
-        if (localIterator > 100) {
-            localIterator -= 100
-        }
         console.log(localIterator)
+        s = (smooth((localIterator / mode.steps * 2) - 1) + 1) / 2 // [0, 1]
+        s2 = (smooth(smooth((localIterator / mode.steps * 2) - 1)) + 1) / 2 // [0, 1]
 
         if (mode.action == "in" || mode.action == "out") {
-            s = (smooth((localIterator / 50) - 1) + 1) / 2 // [0, 1]
             if (i < 15) {
                 if (mode.action == "in") {
                     point1 = plus(gridCenter, [(parseInt(i) - 7) * gridScale, 50 * (s - 1) - 7 * 12])
@@ -65,6 +65,16 @@ function gridRun() {
             } else if (mode.action == "out") {
                 gridLines[i].style.strokeWidth = Math.abs(0.3 - s * 0.3)
             }
+        }
+        if (mode.action == "fill") {
+            gridIcon.style.opacity = s2
+        }
+        if (mode.action == "stroke") {
+            gridIconStroke.style.opacity = s2
+        }
+        if (mode.action == "unfill") {
+            gridIcon.style.opacity = 1 - s2
+            gridIconStroke.style.opacity = 1 - s2
         }
     }
 }
