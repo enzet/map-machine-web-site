@@ -13,7 +13,7 @@ sizeLines = new Array(4);
 
 for (i in [...Array(4).keys()]) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.style.stroke = "#444";
+    path.style.stroke = "#EEF";
     path.style.strokeWidth = "0.3px";
     sizeCanvas.appendChild(path);
 

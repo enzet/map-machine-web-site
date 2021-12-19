@@ -2,50 +2,71 @@
     <meta charset="UTF-8">
     <head><link rel="stylesheet" href="style.css"></head>
     <body>
-        <div id="logo" class="logo">Röntgen</div>
+        <h1 id="logo" class="logo">Röntgen</h1>
 
-        <div class="tag">man_made: surveillance</div>
-        <div class="tag" id="direction_text">direction: 0</div>
-        <svg id="direction_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-                <radialGradient id="blue_gradient" cx="150px" cy="140px" r="120px" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#08f" stop-opacity="0.0" />
-                    <stop offset="30%" stop-color="#08f" stop-opacity="0.0" />
-                    <stop offset="90%" stop-color="#08f" stop-opacity="0.6" />
-                    <stop offset="90%" stop-color="#08f" stop-opacity="0.0" />
-                    <stop offset="100%" stop-color="#08f" stop-opacity="0.0" />
-                </radialGradient>
-            </defs>
-            <path id="direction_sector" d="" stroke="none" fill="url('#blue_gradient')" />
-            <path
-                fill="#444"
-                id="direction_icon"
-                transform="translate(-584.0,-24.0)"
-            />
-        </svg>
-        <div>
-            All icons are pixel-aligned for 14 × 14 px size.  However, they look
-            good for big sizes too.
-        </div>
-        <svg id="size_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path
-                fill="#444"
-                id="size_icon"
-                transform="translate(150,150) scale(4) translate(-584,-24)"
-            />
-            <text
-                id="size_text" x="150" y="156" fill="#444"
-                font-family="Roboto" font-style="italic"
-                text-anchor="end"
-            >_</text>
-        </svg>
-        <svg id="grid_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path
-                fill="#444"
-                id="grid_icon"
-                transform="translate(150,150) scale(12) translate(-584,-24)"
-            />
-        </svg>
+        <section>
+            <div class="example">
+                <svg id="size_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path
+                        fill="#EEF"
+                        id="size_icon"
+                        transform="translate(150,150) scale(4) translate(-584,-24)"
+                    />
+                    <text
+                        id="size_text" x="150" y="156" fill="#EEF"
+                        font-family="Roboto" font-style="italic"
+                        text-anchor="end"
+                    >_</text>
+                </svg>
+            </div>
+            <div class="description">
+                <h2>Adaptive to any size</h2>
+                All icons are pixel-aligned for 14 × 14 px size.  However, they look
+                good for big sizes too.
+            </div>
+        </section>
+        <section>
+            <div class="description" style="text-align: right;">
+                <h2>Pixel-aligned</h2>
+                All icons are pixel-aligned for 14 × 14 px size.
+            </div>
+            <div class="example">
+                <svg id="grid_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path
+                        fill="#EEF"
+                        id="grid_icon"
+                        transform="translate(150,150) scale(12) translate(-584,-24)"
+                    />
+                </svg>
+            </div>
+        </section>
+        <section>
+            <div class="example">
+                <svg id="direction_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <radialGradient id="blue_gradient" cx="150px" cy="140px" r="120px" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#08f" stop-opacity="0.0" />
+                            <stop offset="30%" stop-color="#08f" stop-opacity="0.0" />
+                            <stop offset="90%" stop-color="#08f" stop-opacity="0.6" />
+                            <stop offset="90%" stop-color="#08f" stop-opacity="0.0" />
+                            <stop offset="100%" stop-color="#08f" stop-opacity="0.0" />
+                        </radialGradient>
+                    </defs>
+                    <path id="direction_sector" d="" stroke="none" fill="url('#blue_gradient')" />
+                    <path
+                            fill="#EEF"
+                            id="direction_icon"
+                            transform="translate(-584.0,-24.0)"
+                    />
+                </svg>
+            </div>
+            <div class="description">
+                <div class="tag">
+                    <div>man_made: surveillance</div>
+                    <div id="direction_text">direction: 0</div>
+                </div>
+            </div>
+        </section>
     </body>
     <script type="text/javascript" src="core.js"></script>
     <script type="text/javascript" src="data.js"></script>

@@ -11,10 +11,10 @@ gridLines = new Array(30);
 
 for (i in [...Array(30).keys()]) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");  
-    path.style.stroke = "#444";   
-    path.style.strokeWidth = "0.3px";  
+    path.style.stroke = "#EEF";
+    path.style.strokeWidth = "0.3px";
     gridCanvas.appendChild(path);
-    
+
     gridLines[i] = path;
 }
 
@@ -55,9 +55,9 @@ function gridRun() {
             gridLines[i].setAttribute("d", line(point1, point2))
 
             if (localIterator <= 100) {
-                gridLines[i].style.strokeWidth = Math.abs(s / 3)
+                gridLines[i].style.strokeWidth = Math.abs(s * 0.3)
             } else if (localIterator <= 300) {
-                gridLines[i].style.strokeWidth = Math.abs(1 / 3 - s / 3)
+                gridLines[i].style.strokeWidth = Math.abs(0.3 - s * 0.3)
             }
         }
     }

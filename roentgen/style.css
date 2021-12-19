@@ -1,7 +1,24 @@
 body {
-    background-color: #FEFEFE; color: #444;
+    background-color: #111; color: #EEF;
     font-family: "Roboto"; font-size: 16px;
+    margin: 50px;
 }
-div.logo {font-family: "Montserrat"; font-weight: 700; font-size: 50pt;}
-div.tag {font-family: "JetBrains Mono"; font-size: 20pt;}
+h1 {
+    font-family: "Montserrat"; font-weight: 700; font-size: 90px; font-weight: 900; margin: 20 0;
+    text-align: center;
+    padding: 20px;
+}
+h2 {font-size: 72px; font-weight: 900; margin: 20 0;}
+div.logo {}
+div.tag {
+    font-family: "JetBrains Mono"; font-size: 20pt;
+    background-color: #EEF;
+    color: #111;
+    padding: 10px;
+}
+
+section {display: flex; flex-direction: row; justify-content: space-evenly;}
+div.description {width: 500px; margin: 20px;}
+div.example {width: 300px; margin: 20px;}
+
 svg.canvas {border: 0px solid #DDD;}
