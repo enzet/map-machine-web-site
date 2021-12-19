@@ -4,25 +4,21 @@ gridIterator = 0
 gridModeIndex = 0
 gridCenter = [150, 150]
 gridScale = 12
-icon = icons.cctv
+gridIcons = [
+    icons.telephone,
+    icons.crane,
+    icons.fountain_toret,
+    icons.city_gate,
+    icons.two_people_together,
+]
+gridIconIndex = 0
+
 
 gridCanvas = document.getElementById("grid_canvas");
-gridIcon = document.getElementById("grid_icon");
-gridIcon.setAttribute("d", icon.d)
+gridIconFill = document.getElementById("grid_icon");
 gridIconStroke = document.getElementById("grid_icon_stroke");
-gridIconStroke.setAttribute("d", icons.cctv.d)
 gridLines = new Array(30);
 
-gridIcon.setAttribute(
-    "transform",
-    "translate(150,150) scale(" + gridScale + ") "
-    + "translate(" + icon.x + "," + icon.y + ")"
-)
-gridIconStroke.setAttribute(
-    "transform",
-    "translate(150,150) scale(" + gridScale + ") "
-    + "translate(" + icon.x + "," + icon.y + ")"
-)
 
 for (i in [...Array(30).keys()]) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");  
@@ -34,6 +30,25 @@ for (i in [...Array(30).keys()]) {
 }
 
 function gridRun() {
+
+    if (gridIterator == 0 && gridModeIndex == 0) {
+
+        gridIcon = gridIcons[gridIconIndex]
+
+        gridIconFill.setAttribute("d", gridIcon.d)
+        gridIconFill.setAttribute(
+            "transform",
+            "translate(150,150) scale(" + gridScale + ") "
+            + "translate(" + gridIcon.x + "," + gridIcon.y + ")"
+        )
+        gridIconStroke.setAttribute("d", gridIcon.d)
+        gridIconStroke.setAttribute(
+            "transform",
+            "translate(150,150) scale(" + gridScale + ") "
+            + "translate(" + gridIcon.x + "," + gridIcon.y + ")"
+        )
+        gridIconIndex = gridIconIndex < gridIcons.length - 1 ? gridIconIndex + 1 : 0
+    }
 
     [gridIterator, gridModeIndex] =
         increment(gridIterator, gridModeIndex, gridModes, 2);
@@ -48,7 +63,6 @@ function gridRun() {
             localIterator = gridIterator // + (i - 15) * 2 // Try also (i - 35).
         }
 
-        console.log(localIterator)
         s = (smooth((localIterator / mode.steps * 2) - 1) + 1) / 2 // [0, 1]
         s2 = (smooth(smooth((localIterator / mode.steps * 2) - 1)) + 1) / 2 // [0, 1]
 
@@ -78,15 +92,16 @@ function gridRun() {
                 gridLines[i].style.strokeWidth = Math.abs(0.3 - s * 0.3)
             }
         }
-        if (mode.action == "fill") {
-            gridIcon.style.opacity = s2
-        }
         if (mode.action == "stroke") {
             gridIconStroke.style.opacity = s2
         }
-        if (mode.action == "unfill") {
-            gridIcon.style.opacity = 1 - s2
+        if (mode.action == "fill") {
+            gridIconFill.style.opacity = s2
             gridIconStroke.style.opacity = 1 - s2
+        }
+        if (mode.action == "unfill") {
+            gridIconStroke.setAttribute("d", "")
+            gridIconFill.style.opacity = 1 - s2
         }
     }
 }

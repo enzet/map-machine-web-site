@@ -5,11 +5,16 @@ sizeModeIndex = 0
 minIconSize = 14
 maxIconSize = 128
 sizeCenter = [150.0, 150.0]
-icon = icons.cctv
-
-sizeIcon = document.getElementById("size_icon");
-sizeIcon.setAttribute("d", icon.d)
+sizeIcons = [
+    icons.diving_platform,
+    icons.wind_turbine,
+    icons.binoculars,
+    icons.telephone,
+    icons.mausoleum, // toy_horse
+]
+sizeIconIndex = 0
 sizeCanvas = document.getElementById("size_canvas");
+
 sizeLines = new Array(4);
 
 for (i in [...Array(4).keys()]) {
@@ -23,6 +28,13 @@ for (i in [...Array(4).keys()]) {
 sizeText = document.getElementById("size_text")
 
 function sizeRun() {
+
+    if (sizeIterator == 0 && sizeModeIndex == 0) {
+        sizeIcon = sizeIcons[sizeIconIndex]
+        sizeIconFill = document.getElementById("size_icon");
+        sizeIconFill.setAttribute("d", sizeIcon.d)
+        sizeIconIndex = sizeIconIndex < sizeIcons.length - 1 ? sizeIconIndex + 1 : 0
+    }
 
     [sizeIterator, sizeModeIndex] =
         increment(sizeIterator, sizeModeIndex, sizeModes, 3);
@@ -43,10 +55,10 @@ function sizeRun() {
             scale = maxScale - scale * (maxScale - 1)
         }
 
-        sizeIcon.setAttribute(
+        sizeIconFill.setAttribute(
             "transform",
             "translate(150,150) scale(" + scale + ") "
-            + "translate(" + icon.x + "," + icon.y + ")"
+            + "translate(" + sizeIcon.x + "," + sizeIcon.y + ")"
         )
         s = scale * minIconSize / 2
 

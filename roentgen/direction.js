@@ -1,10 +1,10 @@
 window.setInterval(directionRun, 25);
 
-icon = icons.cctv
+directionIcon = icons.cctv
 
 directionSector = document.getElementById("direction_sector");
-directionIcon = document.getElementById("direction_icon");
-directionIcon.setAttribute("d", icon.d)
+directionIconFill = document.getElementById("direction_icon");
+directionIconFill.setAttribute("d", directionIcon.d)
 directionText = document.getElementById("direction_text");
 
 // Initialization.
@@ -49,9 +49,9 @@ function directionRun() {
         "M " + toCoordinates(point1) + " L " + toCoordinates(directionCenter)
         + " L " + toCoordinates(point2)
     )
-    directionIcon.setAttribute(
+    directionIconFill.setAttribute(
         "transform",
         "translate(150,150) scale(" + scale + ") "
-        + "translate(" + icon.x + "," + icon.y + ")"
+        + "translate(" + directionIcon.x + "," + directionIcon.y + ")"
     )
 }
