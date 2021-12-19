@@ -24,12 +24,12 @@ function smooth(value) {
     return Math.sin(value * Math.PI / 2);
 }
 
-function increment(iterator, modeIndex, modes) {
+function increment(iterator, modeIndex, modes, step) {
 
     mode = modes[modeIndex];
 
     if (iterator < mode.steps) {
-        iterator += 1;
+        iterator += step;
     } else {
         iterator = 0;
         if (modeIndex < modes.length - 1) {

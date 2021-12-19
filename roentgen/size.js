@@ -1,4 +1,4 @@
-window.setInterval(sizeRun, 1);
+window.setInterval(sizeRun, 25);
 
 sizeIterator = 0
 sizeModeIndex = 0
@@ -24,7 +24,7 @@ sizeText = document.getElementById("size_text")
 function sizeRun() {
 
     [sizeIterator, sizeModeIndex] =
-        increment(sizeIterator, sizeModeIndex, sizeModes);
+        increment(sizeIterator, sizeModeIndex, sizeModes, 3);
 
     mode = sizeModes[sizeModeIndex]
 
@@ -59,6 +59,6 @@ function sizeRun() {
                 line(plus(sizeCenter, p[i][0]), plus(sizeCenter, p[i][1])))
         }
         sizeText.setAttribute("x", 150 + s + 70)
-        sizeText.innerHTML = Math.floor(s * 2) + " px"
+        sizeText.innerHTML = Math.round(s * 2) + " px"
     }
 }
