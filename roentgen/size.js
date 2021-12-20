@@ -28,6 +28,12 @@ for (i in [...Array(4).keys()]) {
 }
 sizeText = document.getElementById("size_text")
 
+function changeGridOpacity(opacity) {
+    for (i in [...Array(4).keys()]) {
+        sizeLines[i].style.opacity = opacity;
+    }
+}
+
 function sizeRun() {
 
     if (sizeIterator == 0 && sizeModeIndex == 0) {
@@ -86,12 +92,13 @@ function sizeRun() {
         sizeIconFill.style.opacity = (1 - sizeScale)
         sizeText.style.opacity = (1 - sizeScale)
     } else if (sizeMode.action == "grid_fade_in") {
-        for (i in [...Array(4).keys()]) {
-            sizeLines[i].style.opacity = sizeScale
-        }
+        changeGridOpacity(sizeScale)
     } else if (sizeMode.action == "grid_fade_out") {
-        for (i in [...Array(4).keys()]) {
-            sizeLines[i].style.opacity = 1 - sizeScale
-        }
+        changeGridOpacity(1 - sizeScale)
+    // Next two modes make Safari happy: opacity should be exactly 0 or 1.
+    } else if (sizeMode.action == "after_grid_fade_in") {
+        changeGridOpacity(1)
+    } else if (sizeMode.action == "after_grid_fade_out") {
+        changeGridOpacity(0)
     }
 }
