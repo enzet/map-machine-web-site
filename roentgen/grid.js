@@ -22,9 +22,9 @@ gridLines = new Array(30);
 
 for (i in [...Array(30).keys()]) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");  
-    path.style.stroke = "#EEF";
-    path.style.strokeWidth = "0.3px";
-    gridCanvas.appendChild(path);
+    path.style.stroke = "#555";
+    path.style.strokeWidth = "1px";
+    gridCanvas.prepend(path);
 
     gridLines[i] = path;
 }
@@ -87,9 +87,9 @@ function gridRun() {
             gridLines[i].setAttribute("d", line(point1, point2))
 
             if (mode.action == "in") {
-                gridLines[i].style.strokeWidth = Math.abs(s * 0.3)
+                gridLines[i].style.opacity = s
             } else if (mode.action == "out") {
-                gridLines[i].style.strokeWidth = Math.abs(0.3 - s * 0.3)
+                gridLines[i].style.opacity = 1 - s
             }
         }
         if (mode.action == "stroke") {
