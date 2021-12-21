@@ -5,6 +5,7 @@ gridModeIndex = 0
 gridCenter = [150.5, 150.5]
 gridScale = 12
 gridIcons = [
+    icons.washing_machine,
     icons.city_gate,
     icons.fountain_toret,
     icons.crane,
@@ -57,11 +58,7 @@ function gridRun() {
 
     for (i in [...Array(30).keys()]) {
 
-        if (i < 15) {
-            localIterator = gridIterator // + i * 2
-        } else {
-            localIterator = gridIterator // + (i - 15) * 2 // Try also (i - 35).
-        }
+        localIterator = gridIterator
 
         s = (smooth((localIterator / mode.steps * 2) - 1) + 1) / 2 // [0, 1]
         s2 = (smooth(smooth((localIterator / mode.steps * 2) - 1)) + 1) / 2 // [0, 1]
@@ -69,19 +66,19 @@ function gridRun() {
         if (mode.action == "in" || mode.action == "out") {
             if (i < 15) {
                 if (mode.action == "in") {
-                    point1 = plus(gridCenter, [(parseInt(i) - 7) * gridScale, 50 * (s - 1) - 7 * 12])
-                    point2 = plus(gridCenter, [(parseInt(i) - 7) * gridScale, 50 * (s - 1) + 7 * 12])
+                    point1 = plus(gridCenter, [(parseInt(i) - 7) * (0.8 + s * 0.2) * gridScale, - 7 * 12 - 5])
+                    point2 = plus(gridCenter, [(parseInt(i) - 7) * (0.8 + s * 0.2) * gridScale, + 7 * 12 + 5])
                 } else if (mode.action == "out") {
-                    point1 = plus(gridCenter, [(parseInt(i) - 7) * gridScale, 50 * s - 7 * 12])
-                    point2 = plus(gridCenter, [(parseInt(i) - 7) * gridScale, 50 * s + 7 * 12])
+                    point1 = plus(gridCenter, [(parseInt(i) - 7) * (1.0 - s * 0.2) * gridScale, - 7 * 12 - 5])
+                    point2 = plus(gridCenter, [(parseInt(i) - 7) * (1.0 - s * 0.2) * gridScale, + 7 * 12 + 5])
                 }
             } else {
                 if (mode.action == "in") {
-                    point1 = plus(gridCenter, [50 * (s - 1) - 7 * 12, (parseInt(i) - 15 - 7) * gridScale])
-                    point2 = plus(gridCenter, [50 * (s - 1) + 7 * 12, (parseInt(i) - 15 - 7) * gridScale])
+                    point1 = plus(gridCenter, [- 7 * 12 - 5, (parseInt(i) - 15 - 7) * (0.8 + s * 0.2) * gridScale])
+                    point2 = plus(gridCenter, [+ 7 * 12 + 5, (parseInt(i) - 15 - 7) * (0.8 + s * 0.2) * gridScale])
                 } else if (mode.action == "out") {
-                    point1 = plus(gridCenter, [50 * s - 7 * 12, (parseInt(i) - 15 - 7) * gridScale])
-                    point2 = plus(gridCenter, [50 * s + 7 * 12, (parseInt(i) - 15 - 7) * gridScale])
+                    point1 = plus(gridCenter, [- 7 * 12 - 5, (parseInt(i) - 15 - 7) * (1.0 - s * 0.2) * gridScale])
+                    point2 = plus(gridCenter, [+ 7 * 12 + 5, (parseInt(i) - 15 - 7) * (1.0 - s * 0.2) * gridScale])
                 }
             }
             gridLines[i].setAttribute("d", line(point1, point2))
