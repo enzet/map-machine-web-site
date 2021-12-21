@@ -2,7 +2,7 @@ window.setInterval(gridRun, 25);
 
 gridIterator = 0
 gridModeIndex = 0
-gridCenter = [150, 150]
+gridCenter = [150.5, 150.5]
 gridScale = 12
 gridIcons = [
     icons.city_gate,
