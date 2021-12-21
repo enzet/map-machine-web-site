@@ -9,19 +9,24 @@
         <div id="counter"></div>
         <script type="text/javascript" src="counter.js"></script>
         <h1 id="logo" class="logo">Röntgen</h1>
-        <div>
-            Free 14 × 14 px monochrome pixel-aligned CC-BY 4.0 map icons created
-            for <a href="https://github.com/enzet/map-machine">Map Machine</a>
-            project.
-        </div>
         <section>
+            <div class="subtitle">
+                Free 14 × 14 px monochrome pixel-aligned
+                <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+                vector map icons<br />created for
+                <a class="logo" href="https://github.com/enzet/map-machine">Map Machine</a>
+                project.
+            </div>
+        </section>
+        <section>
+            <div class="description" style="text-align: right;">
+                <h2>Size-adaptive</h2>
+                All icons are pixel-aligned for 14 × 14 px size.  However, they look
+                good for big sizes too.
+            </div>
             <div class="example">
                 <svg id="size_canvas" class="canvas" baseProfile="full" height="300" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d=""
-                        fill="#EEF"
-                        id="size_icon"
-                    />
+                    <path d="" fill="#EEF" id="size_icon" />
                     <text
                         id="size_text" x="220" y="156" fill="#EEF"
                         font-family="Roboto" font-style="italic"
@@ -29,27 +34,15 @@
                     >14 px</text>
                 </svg>
             </div>
-            <div class="description">
-                <h2>Adaptive to any size</h2>
-                All icons are pixel-aligned for 14 × 14 px size.  However, they look
-                good for big sizes too.
-            </div>
         </section>
         <section>
-            <div class="description" style="text-align: right;">
-                <h2>Pixel-aligned</h2>
-                All icons are pixel-aligned for 14 × 14 px size.
-            </div>
             <div class="example">
                 <svg
                         id="grid_canvas" class="canvas" baseProfile="full"
                         height="300" version="1.1" width="300"
                         xmlns="http://www.w3.org/2000/svg"
                 >
-                    <path
-                            id="grid_icon"
-                            d="" fill="#EEF" opacity="0"
-                    />
+                    <path id="grid_icon" d="" fill="#EEF" opacity="0" />
                     <path
                             id="grid_icon_stroke"
                             d="" stroke="#EEF" fill="none" stroke-width="0.1px"
@@ -57,8 +50,21 @@
                     />
                 </svg>
             </div>
+            <div class="description">
+                <h2>Pixel-aligned</h2>
+                When it's possible, icon elements are snapped<br />to the 14 × 14
+                pixels grid.
+            </div>
         </section>
         <section>
+            <div class="description" style="text-align: right;">
+                <h2>Flipping</h2>
+                Direction tag.<br /><br />
+                <div class="tag">
+                    <div>man_made: surveillance</div>
+                    <div id="direction_text">direction: 0</div>
+                </div>
+            </div>
             <div class="example">
                 <svg
                         id="direction_canvas" class="canvas" baseProfile="full"
@@ -73,20 +79,16 @@
                         </radialGradient>
                     </defs>
                     <path id="direction_sector" d="" stroke="none" fill="url('#blue_gradient')" />
-                    <path
-                        d=""
-                        fill="#EEF"
-                        id="direction_icon"
-                    />
+                    <path d="" fill="#EEF" id="direction_icon" />
                 </svg>
             </div>
-            <div class="description">
-                <div class="tag">
-                    <div>man_made: surveillance</div>
-                    <div id="direction_text">direction: 0</div>
-                </div>
-            </div>
         </section>
+        <section>
+            <img src="grid.svg" />
+        </section>
+        <footer>
+            ©&nbsp;<a href="http://enzet.ru">Sergey Vartanov</a>, 2021
+        </footer>
     </body>
 
     <script type="text/javascript" src="core.js"></script>

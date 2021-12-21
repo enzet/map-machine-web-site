@@ -1,25 +1,49 @@
 body {
-    background-color: #111; color: #EEF;
+    background-color: #181818; color: #EEF;
     font-family: "Roboto"; font-size: 16px;
     margin: 50px;
+    line-height: 1.5;
 }
-a {color: #EEF;}
+a {color: inherit;}
 h1 {
-    font-family: "Montserrat"; font-weight: 700; font-size: 90px; font-weight: 900; margin: 20 0;
+    font-family: "Montserrat"; font-weight: 700; font-size: 90px;
+    font-weight: 900; margin: 20 0;
     text-align: center;
-    padding: 20px;
+    padding: 0px;
 }
-h2 {font-size: 72px; font-weight: 900; margin: 20 0;}
-div.logo {}
+a.logo {
+    font-family: "Montserrat"; font-weight: 700;
+}
+section a {
+    text-decoration: none; border-bottom: 1px solid #889;
+}
+h2 {font-size: 32px; font-weight: 900; margin: 0 0 20 0;}
 div.tag {
-    font-family: "JetBrains Mono"; font-size: 20pt;
-    background-color: #EEF;
-    color: #111;
-    padding: 10px;
+    font-family: "JetBrains Mono"; font-size: 10pt;
+    padding: 6 10; border-radius: 7px;
+    border: 1px solid #555;
+    display: inline-block;
+    text-align: left;
 }
 
-section {display: flex; flex-direction: row; justify-content: space-evenly;}
-div.description {width: 500px; margin: 20px;}
-div.example {width: 300px; margin: 20px;}
+section {
+    display: flex; flex-direction: row; justify-content: center;
+    align-items: center;
+}
+footer {
+    display: flex; flex-direction: row; justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: #889;
+    margin-top: 70px;
+}
+div.subtitle {
+    width: 800px; padding: 20px; border-bottom: 0px solid #555;
+    text-align: center;
+}
+div.description {width: 500px; padding: 20px; border-bottom: 0px solid #555;}
+div.example {width: 300px; border-bottom: 0px solid #555;}
 
 svg.canvas {border: 0px solid #DDD;}
+
+div.emoji {font-size: 70px; padding: 20px;}
